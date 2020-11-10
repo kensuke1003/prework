@@ -1,0 +1,183 @@
+/*全体に適応するスタイル*/
+
+
+body{
+    color: #555;
+    line-height: 1.6; /*文字の間の隙間を調整*/
+    margin: 0;
+
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin:0 ;
+}
+
+ul{
+    list-style: none;          /*箇条書きの点を消す*/
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;          /*下線部を消す*/
+    color: inherit;                 /*bodyのカラーを継承させる*/
+}
+
+/*section{
+    padding:60px 0 ;        
+}*/
+
+#news,#interview,#business,#access{
+    padding:60px 0 ;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*ニュース、事業内容アクセス{paddinngで横幅指定するのもあり}  
+marginは背景追加時に困る*/
+
+.wrap{
+    width: 900px;
+    margin: 0 auto;        /*margin 上下　左右と同じ　autoは真ん中調整　左右にしか使えない*/
+
+}
+
+
+
+
+
+/*========================*/
+/*   headerのスタイル*/
+/*======================*/
+
+header{
+    
+    height: 70px;
+    line-height: 70px;
+    display: flex;     /*横並びの手法２*/
+    justify-content: space-between; 
+    padding: 0 35px;    
+
+    /*justify-content: start;
+    justify-content: center;
+    justify-content: space-around;*/
+
+    
+} 
+.header-logo {
+    font-size: 20px;
+}
+
+/*displayのinline-blockを指定した時に個要素の間に隙間ができる、以下で対処
+header-nav ulの全体でfont-sizeをいったん0にして、header-nav liの子要素で復活させる*/
+
+.header-nav ul {
+    font-size: 0;
+}
+
+.header-nav li a:hover{
+    color: lawngreen;
+}
+
+
+.header-nav li{
+    font-size: 16px;
+    display: inline-block; /*liの中の要素を横並びに、方法1、元はblock要素は改行設定の為inline-blockで横並びにする*/
+    margin-left: 35px;
+}
+
+.header-nav listfirst-child{
+    margin: 0;
+}
+
+/*==============*/
+/*eyecatchのスタイル*/
+/*===============*/
+#eyecatch{
+    background-image: url(prework1.jpg);;
+    height: 600px;   /*高さだけ指定してあげる必要あり、画像挿入２/装飾*/
+    /*background-size: contain;   余った部分の画像を繰り返す
+    background-repeat: no-repeat;        繰り返さないためのプロパティ*/
+
+    background-size: cover;     /*全体に映し出す*/
+    background-position:  50% 100%;    /*表示位置を確定させる、水平と平行で*/
+
+    /*containはすっぽり箱に入れて今っている感じ no-repeatとセット
+    coverは箱を覆っててはみ出している感じ   postionとセット*/
+
+    display: flex;
+    justify-content: center;         /*横の中央ぞろえ*/
+    align-items: center;             /*縦の中央ぞろえ*/
+
+}
+ .catch-copy{
+     font-size: 45px;
+     font-weight: bold;  /*文字を太くする*/
+    /*text-align: center;      /*中央寄せ*/
+    /*line-height: 600px;     font-sizeと合わせることで真ん中に来る,文字数が二行になるときは使わない*/   
+
+ }
+
+
+ /*=============================*/
+ /*       newsのスタイル        */
+ /*===========================*/
+ .news-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+ .news-wrap li{
+     margin-top: 10px;
+ }
+ .news-wrap li:first-child{
+    margin-top: 0;
+}
+
+/*上記は一番上のmarginを取り除いた形。以下の一番下で調整もok*/
+/*.news-wrap li{
+    margin-bottom: 10px;
+}
+.news-wrap li:last-child{
+    margin-bottom: 0;
+}*/
+
+
+/*=============擬似クラス============*/
+/*li:first-child
+li:last-child
+li:nth-child()←ここに何番目かの数字を入れる/
+                2nとかで2の倍数だけ表示
+                oddで奇数を表示
+                
+li hover：その要素にカーソルが乗っているときに適応されるクラスのこと*/
+
+ .news-wrap li a:hover{
+     text-decoration: underline;
+ }
+
+.news-wrap li span{
+    margin-right: 20px;
+}
+
+/*============================*/
+/*    interviewのスタイル      */
+/*=============================*/
+#interview{
+    background-image: url(prework1.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
